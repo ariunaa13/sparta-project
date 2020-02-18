@@ -23,14 +23,14 @@
 				monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 				monthNames: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 				dateFormat: "yymmdd",
-maxDate: 0,                       // 선택할수있는 최소날짜, ( 0 : 오늘 이후 날짜 선택 불가)
-onClose: function( selectedDate ) {    
-//시작일(startDate) datepicker가 닫힐때
-//종료일(endDate)의 선택할수있는 최소 날짜(minDate)를 선택한 시작일로 지정
-$("#endDate").datepicker( "option", "minDate", selectedDate );
-}    
+				maxDate: 0,                       // 선택할수있는 최소날짜, ( 0 : 오늘 이후 날짜 선택 불가)
+				onClose: function( selectedDate ) {    
+				//시작일(startDate) datepicker가 닫힐때
+				//종료일(endDate)의 선택할수있는 최소 날짜(minDate)를 선택한 시작일로 지정
+				$("#endDate").datepicker( "option", "minDate", selectedDate );
+				}    
 
-});
+				});
 			$( "#endDate" ).datepicker({
 				changeMonth: true, 
 				changeYear: true,
@@ -41,16 +41,40 @@ $("#endDate").datepicker( "option", "minDate", selectedDate );
 				monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 				monthNames: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 				dateFormat: "yymmdd",
-maxDate: 0,                       // 선택할수있는 최대날짜, ( 0 : 오늘 이후 날짜 선택 불가)
-onClose: function( selectedDate ) {    
-// 종료일(endDate) datepicker가 닫힐때
-// 시작일(startDate)의 선택할수있는 최대 날짜(maxDate)를 선택한 시작일로 지정
-$("#startDate").datepicker( "option", "maxDate", selectedDate );
-}    
+				maxDate: 0,                       // 선택할수있는 최대날짜, ( 0 : 오늘 이후 날짜 선택 불가)
+				onClose: function( selectedDate ) {    
+				// 종료일(endDate) datepicker가 닫힐때
+				// 시작일(startDate)의 선택할수있는 최대 날짜(maxDate)를 선택한 시작일로 지정
+				$("#startDate").datepicker( "option", "maxDate", selectedDate );
+				}    
 
-});    
+				});    
 		});
 	</script>
+
+	<style>
+		.input-date {
+
+			margin : 40px auto 20px auto;
+			text-align : center;
+
+		}
+
+		.form-check{
+
+			margin : 50px auto 10px auto;
+			text-align : center;
+		}
+
+
+		.email-input{
+
+		     margin: 10px auto 30px auto;
+
+		}
+
+
+	</style>
 
 
 	<script>
@@ -66,8 +90,9 @@ $("#startDate").datepicker( "option", "maxDate", selectedDate );
 </head>
 <body>
 
-
-	Select date
+	<br>
+	<br>
+	<h5 class = "input-date"> 원하는 날짜를 입력하세요. </h5>
 	<div calendar align = center>
 		<input type ="text" id = "startDate">
 
@@ -76,28 +101,29 @@ $("#startDate").datepicker( "option", "maxDate", selectedDate );
 		<input type = "text" id = "endDate"> 
 	</div>
 
-<!-- 전체 선택하기 -->
-		<div class = "form-check">
-				<input class = "form-check-input" type = "checkbox" value"" id = "select_all">
-				<label class = "form-check-label" for = "defaultCheck1"> selecte all </label>
-				<br>
-				<br>
-			<div class = "form-detail" id = "select_detail">
-				<input class = "form-check-input" type = "checkbox" value"" >
-				<label class = "form-check-label" for = "defaultCheck1"> GP USA </label>
+	<!-- 전체 선택하기 -->
+	<div class = "form-check">
+		<input class = "form-check-input" type = "checkbox" value"all" id = "select_all">
+		<label class = "form-check-label" for = "defaultCheck1"> 모두 선택 </label>
+		<br>
+		<br>
+		<div class = "form-detail" id = "select_detail">
+			<input class = "form-check-input" type = "checkbox" value"GP_USA" >
+			<label class = "form-check-label" for = "defaultCheck1"> GP USA </label>
 
-				<input class = "form-check-input" type = "checkbox" value"" >
-				<label class = "form-check-label" for = "defaultCheck1"> GP UK </label>
-			</div>
+			<input class = "form-check-input" type = "checkbox" value"GP_UK" >
+			<label class = "form-check-label" for = "defaultCheck1"> GP UK </label>
 		</div>
+	</div>
 
-		<input type ="text" id = "email">
-		<button type="button" class="btn btn-secondary">Send</button>
+<div class = "email-box">
+	<input class = "email-input" type ="text" id = "email">
+	<button type="button" class="btn btn-secondary">Send</button>
 
+</div>
 
-
-<!-- 세부 선택하기 -->
-<div class = "form-check form-check-inline"></div>
+	<!-- 세부 선택하기 -->
+	<div class = "form-check form-check-inline"></div>
 
 
 
