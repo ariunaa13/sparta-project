@@ -58,6 +58,23 @@
 			margin : 40px auto 20px auto;
 			text-align : center;
 
+
+		}
+
+
+		.start_date {
+
+			height : 40px;
+			width : 150px;
+
+		}
+
+
+		.end_date{
+
+			height : 40px;
+			width : 150px;
+
 		}
 
 		.form-check{
@@ -68,9 +85,27 @@
 
 
 		.email-input{
+		     width: 350px;
+		     margin: 0 20px;
 
-		     margin: 10px auto 30px auto;
+		}
 
+		.btn{
+			width: 100px;
+
+		}
+
+		.email_button_set{
+
+			display: block;
+			margin: auto;
+			width: 500px;
+
+
+		}
+
+		.email-box{
+			text-align: center;
 		}
 
 
@@ -84,6 +119,14 @@
 
 		}
 
+		$(document).ready(function(){
+
+			$('.form-check-input').click(function(){
+				$('')
+			})
+
+		})
+
 	</script>
 
 
@@ -94,33 +137,41 @@
 	<br>
 	<h5 class = "input-date"> 원하는 날짜를 입력하세요. </h5>
 	<div calendar align = center>
-		<input type ="text" id = "startDate">
+		<input class = "start_date" type ="text" id = "startDate">
 
 		~
 
-		<input type = "text" id = "endDate"> 
+		<input class = "end_date" type = "text" id = "endDate"> 
 	</div>
 
 	<!-- 전체 선택하기 -->
 	<div class = "form-check">
-		<input class = "form-check-input" type = "checkbox" value"all" id = "select_all">
+		<input class = "form-check-input" type = "checkbox" value"all" id = "select_all" checked>
 		<label class = "form-check-label" for = "defaultCheck1"> 모두 선택 </label>
 		<br>
 		<br>
-		<div class = "form-detail" id = "select_detail">
-			<input class = "form-check-input" type = "checkbox" value"GP_USA" >
+
+		<!-- 상세 선택하기 -->
+		<div class = "form-detail">
+
+			<!-- GP USA 체크박스 -->
+			<input class = "form-check-input" type = "checkbox" value"GP_USA"  id = "select_GP_USA">
 			<label class = "form-check-label" for = "defaultCheck1"> GP USA </label>
 
+			<!-- GP UK 체크박스 -->
 			<input class = "form-check-input" type = "checkbox" value"GP_UK" >
-			<label class = "form-check-label" for = "defaultCheck1"> GP UK </label>
+			<label class = "form-check-label" for = "defaultCheck1"  id = "select_GP_UK"> GP UK </label>
 		</div>
 	</div>
-
+<br>
 <div class = "email-box">
+	<p> 데이터를 받고 싶은 email주소를 입력하세요(, 구분) <br></p>
+	<div class = "email_button_set">
 	<input class = "email-input" type ="text" id = "email">
 	<button type="button" class="btn btn-secondary">Send</button>
-
+	</div>
 </div>
+
 
 	<!-- 세부 선택하기 -->
 	<div class = "form-check form-check-inline"></div>
