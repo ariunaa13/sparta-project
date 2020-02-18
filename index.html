@@ -78,9 +78,23 @@ $("#startDate").datepicker( "option", "maxDate", selectedDate );
 
 <!-- 전체 선택하기 -->
 		<div class = "form-check">
-				<input class = "form-check-input" type = "checkbox" value"" id = "defualtCheck1">
-				<label class = "form-check-label" for = "defaultCheck1"> selected all </label>
+				<input class = "form-check-input" type = "checkbox" value"" id = "select_all">
+				<label class = "form-check-label" for = "defaultCheck1"> selecte all </label>
+				<br>
+				<br>
+			<div class = "form-detail" id = "select_detail">
+				<input class = "form-check-input" type = "checkbox" value"" >
+				<label class = "form-check-label" for = "defaultCheck1"> GP USA </label>
+
+				<input class = "form-check-input" type = "checkbox" value"" >
+				<label class = "form-check-label" for = "defaultCheck1"> GP UK </label>
+			</div>
 		</div>
+
+		<input type ="text" id = "email">
+		<button type="button" class="btn btn-secondary">Send</button>
+
+
 
 <!-- 세부 선택하기 -->
 <div class = "form-check form-check-inline"></div>
