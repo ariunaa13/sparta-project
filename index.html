@@ -52,6 +52,49 @@
 		});
 	</script>
 
+
+
+<!-- <script language = "JavaScript">
+			function toggle(source){
+				checkboxes = document.getElementsByName('select');
+				for(var i = 0, n=checkboxes.length; i < n; i++) {
+					checkboxes[i].checked = source.checked;
+				}
+			}
+
+	</script> -->
+
+
+<!-- 	<script>
+		function sAll(){
+			if($('#selectall').is(':checked')) {
+				$('input[type=checkbox]').prop("checked", true);
+			} else {
+				$("input[type=checkbox]").prop("checked", false);
+			}
+		}
+
+
+	</script> -->
+
+
+	<script> 
+	$(document).on("click", "#selectall", function(){
+		if (! $('#selectall').attr('checked')) {
+			$('.form-check-input').attr('checked', false);
+		} else {
+			$('.form-check-input').attr('checked', 'checked');
+		}
+	});
+
+	$(document).on("click", ".form-check-input", function(){
+		$("#selectall").attr('checked', false);
+	});
+
+	</script>
+
+
+
 	<style>
 		.input-date {
 
@@ -146,7 +189,7 @@
 
 	<!-- 전체 선택하기 -->
 	<div class = "form-check">
-		<input class = "form-check-input" type = "checkbox" value"all" id = "select_all" checked>
+		<input type = "checkbox" name ="select" value"all" id = "selectall" checked>
 		<label class = "form-check-label" for = "defaultCheck1"> 모두 선택 </label>
 		<br>
 		<br>
@@ -155,12 +198,16 @@
 		<div class = "form-detail">
 
 			<!-- GP USA 체크박스 -->
-			<input class = "form-check-input" type = "checkbox" value"GP_USA"  id = "select_GP_USA">
+			<div class = "check_GP_USA">
+			<input class = "form-check-input" type = "checkbox" value"GP_USA"  id = "select_GP_USA" name="select" checked>
 			<label class = "form-check-label" for = "defaultCheck1"> GP USA </label>
+		</div>
 
 			<!-- GP UK 체크박스 -->
-			<input class = "form-check-input" type = "checkbox" value"GP_UK" >
+			<div class = "check_GP_UK">
+			<input class = "form-check-input" type = "checkbox" value"GP_UK" name = "select" checked>
 			<label class = "form-check-label" for = "defaultCheck1"  id = "select_GP_UK"> GP UK </label>
+		</div>
 		</div>
 	</div>
 <br>
