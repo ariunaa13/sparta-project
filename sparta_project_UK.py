@@ -12,10 +12,12 @@ response = requests.get(
 
 soup = BeautifulSoup(response.text, 'html.parser')
 
-articles = soup.select('#main > div.main-section')
+# articles = soup.select('#main > div.main-section')
+articles = soup.select('article')
 
 for article in articles:
-    a_tag = article.select_one('article > header > h3 > a')
+    # a_tag = article.select_one('article > header > h3 > a')
+    a_tag = article.select_one('header > h3 > a')
     title = a_tag.text
     article_link = a_tag['href']
 
