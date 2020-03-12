@@ -1,5 +1,21 @@
 import requests
+import gspread
 from bs4 import BeautifulSoup
+from oauth2client.service_account import ServiceAccountCredentials
+
+scope = [
+    'https://spreadsheets.google.com/feeds',
+    'https://www.googleapis.com/auth/drive',
+]
+
+json_file_name = '/Users/dongeunpark/Desktop/sparta-project.json'
+
+credentials = ServiceAccountCredentials.from_json_keyfile_name(json_file_name,scope)
+gc = gspread.authorize(credentials)
+spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1lTlzEKgDAJmKlRr2rWYvnCNdm3vNa1jXMawxHQVdLxI/edit#gid=0'
+doc = gc.open_by_url(spreadsheet_url)
+worksheet = doc.worksheet(('Sheet1'))
+
 
 headers = {'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:61.0) Gecko/20100101 Firefox/73.0',}
 
